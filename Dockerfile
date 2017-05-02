@@ -43,6 +43,9 @@ RUN pip install chainer
 # install Tensorflow
 RUN pip install tensorflow
 
+# install Keras
+RUN pip install keras
+
 # clear
 RUN yum clean all
 
