@@ -10,7 +10,8 @@
 FROM kunitaya/centos.jp
 MAINTAINER kunitaya
 
-env LANG=ja_JP.UTF-8
+ENV LANG=ja_JP.UTF-8
+ENV LC_ALL=C
 
 # update yum
 RUN yum makecache fast && \
