@@ -40,6 +40,12 @@ ENV PATH $PYENV_ROOT/versions/anaconda3-4.3.1/bin/:$PATH
 # update Conda
 RUN yes | conda update conda
 
+# TODO: CUDA install
+# https://github.com/NVIDIA/nvidia-docker
+# https://github.com/DT42/playground/wiki/Use-CUDA-inside-docker-container
+# https://stackoverflow.com/questions/25185405/using-gpu-from-a-docker-container
+
+# Deep Learning Libraries ---
 # install Chainer
 RUN pip install chainer
 
@@ -48,6 +54,35 @@ RUN pip install tensorflow
 
 # install Keras
 RUN pip install keras
+
+# install Keras-rl
+RUN pip install keras-rl
+
+# TODO: NLR Libraries ---
+# NLTK / Spacy / Vowpal Rabbit / fastText
+
+# Automated Machine Learning / Ensembling Library
+# install TPOT
+RUN pip install tpot
+
+# install heamy
+RUN pip install heamy
+
+# Dimensionality Reduction libraries ---
+# bhtsne (dimensionality reduction) 
+RUN cd /usr/local/src && mkdir bhtsne && cd bhtsne && \
+    git clone --depth 1 https://github.com/lvdmaaten/bhtsne.git && \
+    g++ sptree.cpp tsne.cpp tsne_main.cpp -o bh_tsne -O2 && \
+    rm -rf /root/.cache/pip/* && \
+    rm -rf /usr/local/src/*
+
+# Visualization Libraries ---
+# seaborn ggplot plotly altair
+RUN pip install seaborn ggplot plotly altair
+
+# Others Libraries ---
+# install h5py
+RUN conda install h5py
 
 # install simplejson
 RUN pip install simplejson
