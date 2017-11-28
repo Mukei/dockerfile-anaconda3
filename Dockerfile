@@ -20,6 +20,9 @@ RUN yum makecache fast && \
 # install mariadb (mysql command for development)
 #RUN yum -y install mariadb
 
+# install g++
+RUN yum -y install gcc-c++
+
 # install Prerequisite package
 RUN yum -y install git bzip2 && \
     git clone https://github.com/yyuu/pyenv.git ~/.pyenv
