@@ -63,13 +63,13 @@ RUN pip install keras-rl
 
 # Automated Machine Learning / Ensembling Library
 # install TPOT
-RUN pip install tpot
+#RUN pip install tpot
 
 # install heamy
 RUN pip install heamy
 
 # Dimensionality Reduction libraries ---
-# bhtsne (dimensionality reduction) 
+# bhtsne (dimensionality reduction)
 RUN cd /usr/local/src && mkdir bhtsne && cd bhtsne && \
     git clone --depth 1 https://github.com/lvdmaaten/bhtsne.git && \
     g++ sptree.cpp tsne.cpp tsne_main.cpp -o bh_tsne -O2 && \
