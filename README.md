@@ -8,7 +8,7 @@ Dockerfile for Anaconda3 on CentOS
 * Conda 4.3.17-py36_0
 * Chainer 1.23.0
 * Tensorflow 1.1.0
-* Karas 2.0.4
+* Keras 2.0.4
 
 ### Activation manner
 ```
