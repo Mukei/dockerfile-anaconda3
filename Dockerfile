@@ -20,7 +20,7 @@ RUN yum makecache fast && \
 # install mariadb (mysql command for development)
 #RUN yum -y install mariadb
 
-# install g++
+# install kg++
 RUN yum -y install gcc-c++
 
 # install Prerequisite package
@@ -73,8 +73,9 @@ RUN pip install heamy
 
 # Dimensionality Reduction libraries ---
 # bhtsne (dimensionality reduction)
-RUN cd /usr/local/src && mkdir bhtsne && cd bhtsne && \
+RUN cd /usr/local/src &&
     git clone --depth 1 https://github.com/lvdmaaten/bhtsne.git && \
+    cd bhtsne && \
     g++ sptree.cpp tsne.cpp tsne_main.cpp -o bh_tsne -O2 && \
     rm -rf /root/.cache/pip/* && \
     rm -rf /usr/local/src/*
