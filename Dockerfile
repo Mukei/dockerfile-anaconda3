@@ -73,7 +73,7 @@ RUN pip install heamy
 
 # Dimensionality Reduction libraries ---
 # bhtsne (dimensionality reduction)
-RUN cd /usr/local/src &&
+RUN cd /usr/local/src && \
     git clone --depth 1 https://github.com/lvdmaaten/bhtsne.git && \
     cd bhtsne && \
     g++ sptree.cpp tsne.cpp tsne_main.cpp -o bh_tsne -O2 && \
